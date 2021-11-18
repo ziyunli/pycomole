@@ -42,3 +42,18 @@ def find_disappeared_numbers(nums: List[int]) -> List[int]:
         if v in ns:
             ns.remove(v)
     return list(ns)
+
+
+def find_disappeared_numbers_bitflag(nums: List[int]) -> List[int]:
+    n = len(nums)
+    flags = 0
+    ret = []
+    for v in nums:
+        flags = flags | (1 << (v - 1))
+
+    for i in range(0, n):
+        b = (flags >> i) & 1
+        if not b:
+            ret.append(i + 1)
+
+    return ret
