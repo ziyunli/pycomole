@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "leetcode.py"
+name = "Pycomole"
 version = "0.1.0"
-description = "Leet solutions using Python"
+description = "Programming challenge solutions using Python"
 authors = ["Ziyun Li <me@ziyunli.dev>"]
 
 [tool.poetry.dependencies]
@@ -13,7 +13,7 @@ pytest = "^6.2"
 pytest-cov = "^3.0.0"
 pre-commit = "^2.15.0"
 flake8 = "^4.0.1"
-black = {version = "^21.11b1", allow-prereleases = true}
+black = "^22.6.0"
 mypy = "^0.910"
 isort = "^5.10.1"
 
