@@ -32,10 +32,6 @@ from typing import List
 
 def product_except_self(nums: List[int]) -> List[int]:
     n = len(nums)
-    if n == 0:
-        return []
-    if n == 1:
-        return [0]
 
     left_products = []
     prev_product = 1
@@ -52,3 +48,17 @@ def product_except_self(nums: List[int]) -> List[int]:
     for i in range(n):
         nums[i] = left_products[i] * right_products[n - 1 - i]
     return nums
+
+
+def product_except_self_mem_optimal(nums: List[int]) -> List[int]:
+    ans = [1 for _ in nums]
+
+    lproduct = 1
+    rproduct = 1
+    for i in range(len(nums)):
+        ans[i] = ans[i] * lproduct
+        ans[-1 - i] = ans[-1 - i] * rproduct
+        lproduct = lproduct * nums[i]
+        rproduct = rproduct * nums[-1 - i]
+
+    return ans
