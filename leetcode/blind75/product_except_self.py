@@ -31,4 +31,24 @@ from typing import List
 
 
 def product_except_self(nums: List[int]) -> List[int]:
-    pass
+    n = len(nums)
+    if n == 0:
+        return []
+    if n == 1:
+        return [0]
+
+    left_products = []
+    prev_product = 1
+    for i in range(n):
+        left_products.append(prev_product)
+        prev_product = prev_product * nums[i]
+
+    right_products = []
+    prev_product = 1
+    for j in range(n):
+        right_products.append(prev_product)
+        prev_product = prev_product * nums[n - 1 - j]
+
+    for i in range(n):
+        nums[i] = left_products[i] * right_products[n - 1 - i]
+    return nums
