@@ -32,11 +32,7 @@ Follow up: A linked list can be reversed either iteratively or recursively. Coul
 # Definition for singly-linked list.
 from typing import Optional
 
-
-class ListNode:
-    def __init__(self, val: int = 0, next: Optional["ListNode"] = None):
-        self.val = val
-        self.next = next
+from structs.list_node import ListNode
 
 
 def reverse_list(head: Optional[ListNode]) -> Optional[ListNode]:
