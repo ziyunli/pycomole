@@ -14,24 +14,20 @@ def reverse_words(s: str) -> str:
         A string that reverses the order of the letters in each word \
             from the input while preserving the word order and spacing
     """
+    results = []
+    stack = []
+    for c in s:
+        # Assume the string only has alphabet and numeric characters
+        if c.isalnum():
+            stack.append(c)
+        else:
+            while stack:
+                results.append(stack.pop())
+            results.append(c)  # preserve the same number of spaces
 
-    def with_stack(s: str) -> str:
-        results = []
-        stack = []
-        for c in s:
-            # Assume the string only has alphabet and numeric characters
-            if c.isalnum():
-                stack.append(c)
-            else:
-                while stack:
-                    results.append(stack.pop())
-                results.append(c)  # preserve the same number of spaces
-
-        while stack:
-            results.append(stack.pop())
-        return "".join(results)
-
-    return with_stack(s)
+    while stack:
+        results.append(stack.pop())
+    return "".join(results)
 
 
 def has_balanced_parentheses(s: str) -> bool:

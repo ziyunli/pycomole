@@ -1,5 +1,7 @@
 site_name: pycomole
 repo_url: https://github.com/ziyunli/pycomole
+watch:
+  - src
 
 theme:
   name: material
@@ -31,5 +33,3 @@ plugins:
           rendering:
             show_signature_annotations: true
             show_source: true
-      watch:
-        - src
