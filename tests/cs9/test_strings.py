@@ -70,6 +70,8 @@ def test_reverse_words() -> None:
 def test_longest_contiguous_substring() -> None:
     assert longest_contiguous_substring("") == ""
     assert longest_contiguous_substring("a") == ""
+    assert longest_contiguous_substring("aa") == ""
+    assert longest_contiguous_substring("ab") == "ab"
     assert longest_contiguous_substring("abbaacab") == "abbaa"
     assert longest_contiguous_substring("abcefabbabaabefghghfa") == "abbabaab"
     assert longest_contiguous_substring("aabceddddcdccecabceftg") == "ddddcdcc"

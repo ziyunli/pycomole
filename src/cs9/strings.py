@@ -1,5 +1,4 @@
-from collections import deque
-from typing import Deque, Dict
+from typing import Set
 
 
 def reverse_words(s: str) -> str:
@@ -142,38 +141,34 @@ def longest_contiguous_substring(s: str) -> str:
             and when they first show up
         - Use a sliding window to keep track of the longest substring
     """
-    longest = None
-    chars: Deque[str] = deque()  # the latest 2 distinct characters
-    idx: Dict[str, int] = {}  # idx of the 2 characters
+    if len(s) < 2:
+        return ""
+
+    if len(s) == 2:
+        if len(set(s)) == 2:
+            return s
+        else:
+            return ""
+
+    longest = ""
+    start = 0  # sliding window is [start, i)
+    chars: Set[str] = set()
     for i, c in enumerate(s):
-        if len(idx) < 2:
-            chars.append(c)
-            idx[c] = i
-        else:  # At most 2 distinct characters
-            if c not in idx:
-                # Calculate the length of the current 2-letter substring
-                head = chars[0]
-                span = (idx[head], i)
-                # Update the longest substring if it's longer
-                if (
-                    longest is None
-                    or span[1] - span[0] > longest[1] - longest[0]
-                ):
-                    longest = span
-                # Note the head might not be the one to remove
-                # e.g. bbbaaabbbc, we keep b and need to move its idx
-                prev = s[i - 1]
-                # Find the new idx for prev
-                new_head = i - 1
-                while new_head > 0:
-                    if s[new_head - 1] != s[new_head]:
+        if len(chars) < 2:
+            chars.add(c)
+        else:  # len(chars) == 2
+            if c not in chars:
+                # See if we have a new longest substring
+                if i - start > len(longest):
+                    longest = s[start:i]
+                # Find the new starting index of the sliding window
+                start = i - 1
+                while start > 0:
+                    if s[start - 1] != s[start]:
                         break
-                    new_head -= 1
-                idx[prev] = new_head
-                idx[c] = i
-                # Remove the other chacter
-                del idx[s[new_head - 1]]
-                # The new 2-letter set
-                chars = deque([prev, c])
-            # otherwise, keep going
-    return "" if longest is None else s[longest[0] : longest[1]]
+                    start -= 1
+                # Remote the other character
+                chars.remove(s[start - 1])
+                # Add the new character
+                chars.add(c)
+    return longest
