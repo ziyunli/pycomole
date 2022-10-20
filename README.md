@@ -1,8 +1,5 @@
 # pycomole
 
-[![PyPI](https://img.shields.io/pypi/v/pycomole?style=flat-square)](https://pypi.python.org/pypi/pycomole/)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pycomole?style=flat-square)](https://pypi.python.org/pypi/pycomole/)
-[![PyPI - License](https://img.shields.io/pypi/l/pycomole?style=flat-square)](https://pypi.python.org/pypi/pycomole/)
 [![Coookiecutter - Wolt](https://img.shields.io/badge/cookiecutter-Wolt-00c2e8?style=flat-square&logo=cookiecutter&logoColor=D4AA00&link=https://github.com/woltapp/wolt-python-package-cookiecutter)](https://github.com/woltapp/wolt-python-package-cookiecutter)
 
 
