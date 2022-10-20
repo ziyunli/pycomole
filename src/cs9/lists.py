@@ -19,6 +19,10 @@ def dedup(lst: List[str]) -> List[str]:
 
     Returns:
         a copy of the input list with duplicates removed
+
+    Notes:
+        - The perfect use case for a set.
+        - If Set is not available, use a dictionary/hash map.
     """
     found = set()
     results = []
@@ -46,6 +50,11 @@ def keep_nth_occurrences(lst: List[str], n: int) -> List[str]:
 
     Returns:
         a copy of the input list that keeps nth occurrence.
+
+    Notes:
+        - Think about where a string has fewer than n occurrences. \
+            Note we keep it in the result, but alternative you can \
+                only include nth occurrence if it exists.
     """
     if n < 1:
         return []
