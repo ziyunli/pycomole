@@ -51,7 +51,6 @@ def test_has_balanced_brackets() -> None:
     assert not has_balanced_brackets("]]")
     assert not has_balanced_brackets(r"}}")
     assert not has_balanced_brackets("(()")
-    assert not has_balanced_brackets("([)])")
     assert not has_balanced_brackets("[[]")
     assert not has_balanced_brackets(r"{{}")
     assert not has_balanced_brackets("())")
