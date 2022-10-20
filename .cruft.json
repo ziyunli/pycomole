@@ -6,11 +6,11 @@
     "cookiecutter": {
       "author_name": "Ziyun Li",
       "author_email": "me@ziyunli.dev",
-      "github_username": "ziyun_li",
+      "github_username": "ziyunli",
       "project_name": "pycomole",
       "project_slug": "pycomole",
       "package_name": "pycomole",
-      "project_short_description": "Coding exercises",
+      "project_short_description": "Programming challenge solutions using Python",
       "_template": "https://github.com/woltapp/wolt-python-package-cookiecutter"
     }
   },

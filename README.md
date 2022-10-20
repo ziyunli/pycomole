@@ -1,35 +1,27 @@
 # pycomole
 
+[![Test](https://github.com/ziyunli/pycomole/actions/workflows/test.yml/badge.svg)](https://github.com/ziyunli/pycomole/actions/workflows/test.yml)
 [![Coookiecutter - Wolt](https://img.shields.io/badge/cookiecutter-Wolt-00c2e8?style=flat-square&logo=cookiecutter&logoColor=D4AA00&link=https://github.com/woltapp/wolt-python-package-cookiecutter)](https://github.com/woltapp/wolt-python-package-cookiecutter)
 
 
 ---
 
-**Documentation**: [https://ziyun_li.github.io/pycomole](https://ziyun_li.github.io/pycomole)
+**Documentation**: [https://ziyunli.github.io/pycomole](https://ziyunli.github.io/pycomole)
 
-**Source Code**: [https://github.com/ziyun_li/pycomole](https://github.com/ziyun_li/pycomole)
-
-**PyPI**: [https://pypi.org/project/pycomole/](https://pypi.org/project/pycomole/)
+**Source Code**: [https://github.com/ziyunli/pycomole](https://github.com/ziyunli/pycomole)
 
 ---
 
-Coding exercises
-
-## Installation
-
-```sh
-pip install pycomole
-```
+Coding exercises in Python.
 
 ## Development
 
-* Clone this repository
 * Requirements:
   * [Poetry](https://python-poetry.org/)
   * Python 3.10+
-* Create a virtual environment and install the dependencies
 
 ```sh
+poetry env use python
 poetry install
 ```
 
@@ -51,15 +43,11 @@ The documentation is automatically generated from the content of the [docs direc
  of the public signatures of the source code. The documentation is updated and published as a [Github project page
  ](https://pages.github.com/) automatically as part each release.
 
-### Releasing
+You can run it locally via:
 
-Trigger the [Draft release workflow](https://github.com/ziyun_li/pycomole/actions/workflows/draft_release.yml)
-(press _Run workflow_). This will update the changelog & version and create a GitHub release which is in _Draft_ state.
-
-Find the draft release from the
-[GitHub releases](https://github.com/ziyun_li/pycomole/releases) and publish it. When
- a release is published, it'll trigger [release](https://github.com/ziyun_li/pycomole/blob/master/.github/workflows/release.yml) workflow which creates PyPI
- release and deploys updated documentation.
+```sh
+mkdocs serve
+```
 
 ### Pre-commit
 
