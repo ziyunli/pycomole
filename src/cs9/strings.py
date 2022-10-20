@@ -31,13 +31,6 @@ def reverse_words(s: str) -> str:
             results.append(stack.pop())
         return "".join(results)
 
-    def naive(s: str) -> str:
-        words = s.split()
-        reverse_words = []
-        for w in words:
-            reverse_words.append(w[::-1])
-        return " ".join(reverse_words)
-
     return with_stack(s)
 
 
