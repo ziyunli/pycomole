@@ -7,6 +7,7 @@ def test_dedup() -> None:
 
 
 def test_keep_nth_occurrences() -> None:
+    assert keep_nth_occurrences(["a", "b", "a", "c", "b"], 0) == []
     assert keep_nth_occurrences(["a", "b", "a", "c", "b"], 1) == [
         "a",
         "b",

@@ -94,7 +94,7 @@ exclude = '''
 
 [tool.pytest.ini_options]
 addopts = """\
-    --cov src \
+    --cov src/cs9 \
     --cov tests \
     --cov-report term-missing \
     --no-cov-on-fail \
