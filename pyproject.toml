@@ -1,36 +1,72 @@
 [tool.poetry]
-name = "Pycomole"
-version = "0.1.0"
+name = "pycomole"
+version = "0.0.1"
 description = "Programming challenge solutions using Python"
-authors = ["Ziyun Li <me@ziyunli.dev>"]
+authors = [
+    "Ziyun Li <me@ziyunli.dev>",
+]
+license = "MIT"
+readme = "README.md"
+
+documentation = "https://ziyun_li.github.io/pycomole"
+homepage = "https://ziyun_li.github.io/pycomole"
+repository = "https://github.com/ziyun_li/pycomole"
+
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Typing :: Typed",
+]
+
+packages = [
+    { include = "pycomole", from = "src" }
+]
 
 [tool.poetry.dependencies]
-python = "^3.9"
-pytest = "^6.2.5"
+python = ">=3.10.0, <4.0"
+flake8-logging-format = "^0.8.1"
+setuptools = "^65.5.0"
 
 [tool.poetry.dev-dependencies]
-pytest = "^6.2"
-pytest-cov = "^3.0.0"
-pre-commit = "^2.15.0"
-flake8 = "^4.0.1"
-black = "^22.6.0"
-mypy = "^0.910"
-isort = "^5.10.1"
+autoflake = "*"
+black = "*"
+flake8 = "*"
+flake8-bugbear = "*"
+flake8-builtins = "*"
+flake8-comprehensions = "*"
+flake8-debugger = "*"
+flake8-eradicate = "*"
+flake8-logging-format = "*"
+isort = "*"
+mkdocstrings = "*"
+mkdocs-material = "*"
+mypy = "*"
+pep8-naming = "*"
+pre-commit = "*"
+pymdown-extensions = "*"
+pytest = "*"
+pytest-github-actions-annotate-failures = "*"
+pytest-cov = "*"
+python-kacl = "*"
+pyupgrade = "*"
+tryceratops = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.isort]
-multi_line_output = 3
-include_trailing_comma = true
-force_grid_wrap = 0
-use_parentheses = true
-line_length = 79
+profile = "black"
+src_paths = ["src", "tests"]
 
 [tool.black]
 line-length = 79
-target-version = ['py310']
+target-version = ["py310"]
 include = '\.pyi?$'
 exclude = '''
 
@@ -51,3 +87,29 @@ exclude = '''
                      # the root of the project
 )
 '''
+
+[tool.pytest.ini_options]
+addopts = """\
+    --cov pycomole \
+    --cov tests \
+    --cov-report term-missing \
+    --no-cov-on-fail \
+"""
+
+[tool.coverage.report]
+fail_under = 100
+exclude_lines = [
+    'if TYPE_CHECKING:',
+    'pragma: no cover'
+]
+
+[tool.mypy]
+disallow_any_unimported = true
+disallow_untyped_defs = true
+no_implicit_optional = true
+strict_equality = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_return_any = true
+check_untyped_defs = true
+show_error_codes = true

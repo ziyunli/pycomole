@@ -1,0 +1,18 @@
+{
+  "template": "https://github.com/woltapp/wolt-python-package-cookiecutter",
+  "commit": "6669a067eeaaed3bee84312428a3e94cd13295f2",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "author_name": "Ziyun Li",
+      "author_email": "me@ziyunli.dev",
+      "github_username": "ziyun_li",
+      "project_name": "pycomole",
+      "project_slug": "pycomole",
+      "package_name": "pycomole",
+      "project_short_description": "Coding exercises",
+      "_template": "https://github.com/woltapp/wolt-python-package-cookiecutter"
+    }
+  },
+  "directory": null
+}
