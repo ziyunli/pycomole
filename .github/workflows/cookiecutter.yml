@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: "3.10"
 
@@ -23,7 +23,7 @@ jobs:
 
       - name: Check if there are changes
         id: changes
-        run: echo "::set-output name=changed::$(git status --porcelain | wc -l)"
+        run: echo "name=changed::$(git status --porcelain | wc -l)" >> "$GITHUB_OUTPUT"
 
       - name: apply additional changes and fixes
         if: steps.changes.outputs.changed > 0

@@ -17,8 +17,11 @@ theme:
 
 nav:
   - Introduction: 'index.md'
-  - api_docs.md
+  - Notes:
+    - "notes/strings.md"
+  - solutions.md
   - changelog.md
+
 
 markdown_extensions:
   - pymdownx.snippets:
