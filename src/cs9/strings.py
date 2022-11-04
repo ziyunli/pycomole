@@ -1,4 +1,5 @@
-from typing import Set
+from collections import defaultdict
+from typing import Dict, Set
 
 
 def reverse_words(s: str) -> str:
@@ -204,3 +205,41 @@ def abbrev(s: str) -> str:
     head = s[0]
     tail = s[-1]
     return "".join([head, str(len(s) - 2), tail])
+
+
+def anagram(s: str, t: str) -> bool:
+    """
+    Checks if the given two strings to be anagram of each other.
+    Two strings are said to be anagrams of one another if you can turn \
+        the first string into the second by rearranging its letters.
+
+    Examples:
+        >>> anagram("table", "bleat")
+        True
+        >>> anagram("foo", "bar")
+        False
+
+    Args:
+        s: The first string
+        t: The second string
+
+    Returns:
+        A boolean indicating whether the given two strings are anagrams \
+            of each other
+
+    Notes:
+        - Anagrams always have the same length
+        - Use a dictionary to keep track of the letter counts (histogram)
+    """
+    if len(s) != len(t):
+        return False
+
+    histogram_s: Dict[str, int] = defaultdict(int)
+    for ch in s.lower():
+        histogram_s[ch] += 1
+
+    histogram_t: Dict[str, int] = defaultdict(int)
+    for ch in t.lower():
+        histogram_t[ch] += 1
+
+    return histogram_s == histogram_t

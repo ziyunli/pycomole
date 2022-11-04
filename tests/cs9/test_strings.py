@@ -1,5 +1,6 @@
 from cs9.strings import (
     abbrev,
+    anagram,
     has_balanced_brackets,
     has_balanced_parentheses,
     longest_contiguous_substring,
@@ -87,3 +88,14 @@ def test_abbrev() -> None:
     assert abbrev("abc") == "abc"
     assert abbrev("localization") == "l10n"
     assert abbrev("internationalization") == "i18n"
+
+
+def test_anagram() -> None:
+    assert anagram("", "")
+    assert anagram("a", "a")
+    assert not anagram("a", "b")
+    assert anagram("ab", "ba")
+    assert anagram("table", "bleat")
+    assert anagram("tear", "rate")
+    assert not anagram("ban", "banana")
+    assert anagram("banana", "bananA")
