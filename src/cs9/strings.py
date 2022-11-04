@@ -172,3 +172,35 @@ def longest_contiguous_substring(s: str) -> str:
                 # Add the new character
                 chars.add(c)
     return longest
+
+
+def abbrev(s: str) -> str:
+    """
+    Returns an abbreviation form \
+        `<first letter> <number of omitted letters> <last letter>` \
+            of the input string.
+
+    Examples:
+        >>> abbrev("internationalization")
+        i18n
+        >>> abbrev("localization")
+        l10n
+
+    Args:
+        s: the input string
+
+    Returns:
+        An abbreviation of the input string in the form of \
+            `<first letter> <number of omitted letters> <last letter>.`
+
+    Notes:
+        - Handle edge cases where the input string is too short \
+            e.g. 0-, 1-, 2-, 3-letter strings)
+        - Clarify if the input has non-alphabet letters
+    """
+    if len(s) <= 3:
+        return s  # Nothing to abbrev
+
+    head = s[0]
+    tail = s[-1]
+    return "".join([head, str(len(s) - 2), tail])

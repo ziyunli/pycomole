@@ -1,4 +1,5 @@
 from cs9.strings import (
+    abbrev,
     has_balanced_brackets,
     has_balanced_parentheses,
     longest_contiguous_substring,
@@ -57,6 +58,7 @@ def test_has_balanced_brackets() -> None:
     assert not has_balanced_brackets("())")
     assert not has_balanced_brackets("][")
     assert not has_balanced_brackets(r"}{")
+    assert not has_balanced_brackets("([)]")
     assert not has_balanced_brackets(r"((()))[]{}(")
 
 
@@ -76,3 +78,12 @@ def test_longest_contiguous_substring() -> None:
     assert longest_contiguous_substring("abcefabbabaabefghghfa") == "abbabaab"
     assert longest_contiguous_substring("aabceddddcdccecabceftg") == "ddddcdcc"
     assert longest_contiguous_substring("acbabbcbca") == "bbcbc"
+
+
+def test_abbrev() -> None:
+    assert abbrev("") == ""
+    assert abbrev("a") == "a"
+    assert abbrev("ab") == "ab"
+    assert abbrev("abc") == "abc"
+    assert abbrev("localization") == "l10n"
+    assert abbrev("internationalization") == "i18n"
