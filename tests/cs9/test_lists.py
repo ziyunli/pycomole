@@ -1,4 +1,4 @@
-from cs9.lists import dedup, keep_nth_occurrences
+from cs9.lists import dedup, keep_nth_occurrences, two_sum
 
 
 def test_dedup() -> None:
@@ -20,3 +20,10 @@ def test_keep_nth_occurrences() -> None:
         "foo",
         "bar",
     ]
+
+
+def test_two_sum() -> None:
+    assert two_sum([2, 7, 11, 15], 8) == []
+    assert two_sum([2, 7, 11, 15], 9) == [0, 1]
+    assert two_sum([3, 2, 4], 6) == [1, 2]
+    assert two_sum([3, 3], 6) == [0, 1]
