@@ -2,7 +2,7 @@
 
 Modules exported by this package:
 
-- `lists`: list-related problems
+- `arrays`: array-related problems
 - `strings`: string-related problems
 - `trees`: tree-related problems
 """

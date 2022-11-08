@@ -2,7 +2,7 @@
 
 ::: cs9
 
-::: cs9.lists
+::: cs9.arrays
 
 ::: cs9.strings
 
