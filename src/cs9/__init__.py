@@ -2,5 +2,7 @@
 
 Modules exported by this package:
 
-- `strings`: string-related exercises
+- `lists`: list-related problems
+- `strings`: string-related problems
+- `trees`: tree-related problems
 """

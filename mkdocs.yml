@@ -19,7 +19,8 @@ nav:
   - Introduction: 'index.md'
   - Notes:
     - "notes/strings.md"
-  - solutions.md
+  - Solutions:
+    - "solutions/cs9.md"
   - changelog.md
 
 
