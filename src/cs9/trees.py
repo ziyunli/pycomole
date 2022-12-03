@@ -18,11 +18,13 @@ def has_common_non_root_ancestor(
         the root.
 
     Examples:
-    #       root
-    #      /    \\
-    #     a       b
-    #   /   \\    /  \\
-    #  c     d  e    f
+    ```
+           root
+          /    \\
+         a       b
+       /   \\    /  \\
+      c     d  e    f
+    ```
 
     Args:
         root: The root of a binary tree

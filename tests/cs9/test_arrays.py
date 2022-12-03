@@ -1,4 +1,4 @@
-from cs9.lists import dedup, keep_nth_occurrences, two_sum
+from cs9.arrays import dedup, keep_nth_occurrences, two_sum
 
 
 def test_dedup() -> None:
