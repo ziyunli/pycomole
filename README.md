@@ -21,15 +21,12 @@ Requirements:
 * [direnv](https://direnv.net/)
 * [devenv](https://devenv.sh/)
 
+* Activate the development environment
+
 ```bash
+devenv shell
 poetry env use python
 poetry install
-```
-
-* Activate the virtual environment
-
-```bash
-poetry shell
 ```
 
 ### Testing
