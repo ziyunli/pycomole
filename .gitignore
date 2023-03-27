@@ -77,3 +77,7 @@ venv.bak/
 
 # IDEs
 .idea/
+
+# Devenv
+.devenv*
+devenv.local.nix
