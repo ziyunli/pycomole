@@ -17,23 +17,23 @@ Coding exercises in Python.
 ## Development
 
 * Requirements:
-  * [Poetry](https://python-poetry.org/)
-  * Python 3.10+
+  * [Nix: the package manager](https://nixos.org/download.html)
+  * [devenv](https://devenv.sh/)
 
-```sh
+```bash
 poetry env use python
 poetry install
 ```
 
 * Activate the virtual environment
 
-```sh
+```bash
 poetry shell
 ```
 
 ### Testing
 
-```sh
+```bash
 pytest
 ```
 
