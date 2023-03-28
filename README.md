@@ -21,7 +21,7 @@ Requirements:
 * [direnv](https://direnv.net/)
 * [devenv](https://devenv.sh/)
 
-* Activate the development environment
+### Activate the development environment
 
 ```bash
 devenv shell
