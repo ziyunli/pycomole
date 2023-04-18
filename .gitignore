@@ -81,3 +81,5 @@ venv.bak/
 # Devenv
 .devenv*
 devenv.local.nix
+
+.direnv
