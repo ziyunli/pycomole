@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pycomole"
-version = "0.0.1"
+version = "0.0.2"
 description = "Programming challenge solutions using Python"
 authors = [
     "Ziyun Li <me@ziyunli.dev>",
@@ -12,40 +12,19 @@ documentation = "https://ziyunli.github.io/pycomole"
 homepage = "https://ziyunli.github.io/pycomole"
 repository = "https://github.com/ziyunli/pycomole"
 
-classifiers = [
-  "Development Status :: 4 - Beta",
-  "Intended Audience :: Developers",
-  "Operating System :: OS Independent",
-  "Programming Language :: Python",
-  "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.10",
-  "Topic :: Software Development :: Libraries :: Python Modules",
-  "Typing :: Typed",
-]
-
 packages = [
     { include = "pycomole", from = "src" }
 ]
 
 [tool.poetry.dependencies]
 python = ">=3.10.0, <4.0"
-flake8-logging-format = "^0.8.1"
 setuptools = "^65.5.1"
+ruff = "^0.0.261"
 
 [tool.poetry.dev-dependencies]
-autoflake = "*"
 black = "*"
-flake8 = "*"
-flake8-bugbear = "*"
-flake8-builtins = "*"
-flake8-comprehensions = "*"
-flake8-debugger = "*"
-flake8-eradicate = "*"
-flake8-logging-format = "*"
-isort = "*"
 mkdocstrings = {version = "*", extras = ["python"]}
 mkdocs-material = "*"
-mypy = "*"
 pep8-naming = "*"
 pre-commit = "*"
 pymdown-extensions = "*"
@@ -59,15 +38,6 @@ tryceratops = "*"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.isort]
-profile = "black"
-src_paths = ["src", "tests"]
-multi_line_output = 3
-include_trailing_comma = true
-force_grid_wrap = 0
-use_parentheses = true
-line_length = 79
 
 [tool.black]
 line-length = 79
@@ -108,13 +78,7 @@ exclude_lines = [
     'pragma: no cover'
 ]
 
-[tool.mypy]
-disallow_any_unimported = true
-disallow_untyped_defs = true
-no_implicit_optional = true
-strict_equality = true
-warn_unused_ignores = true
-warn_redundant_casts = true
-warn_return_any = true
-check_untyped_defs = true
-show_error_codes = true
+[tool.ruff]
+# Decrease the maximum line length to 79 characters.
+line-length = 79
+src = ["src"]
