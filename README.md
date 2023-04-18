@@ -17,6 +17,7 @@ Coding exercises in Python.
 ## Development
 
 Requirements:
+
 * [Nix: the package manager](https://nixos.org/download.html)
 * [direnv](https://direnv.net/)
 * [devenv](https://devenv.sh/)
