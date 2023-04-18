@@ -1,20 +1,19 @@
-{ pkgs, ... }:
-
+{ inputs, pkgs, ... }: let
+  pkgs-stable = import inputs.nixpkgs-stable { system = pkgs.stdenv.system; };
+in
 {
   packages = [ pkgs.zlib ];
 
   # https://devenv.sh/languages/
-  # languages.nix.enable = true;
-    languages.python = {
+  languages.python = {
     enable = true;
-    poetry.enable = true;
+    package = pkgs-stable.python311;
+    poetry = {
+      enable = true;
+      package = pkgs-stable.poetry.override
+        {
+          python = pkgs-stable.python311;
+        };
+    };
   };
-
-  # https://devenv.sh/pre-commit-hooks/
-  # pre-commit.hooks.shellcheck.enable = true;
-
-  # https://devenv.sh/processes/
-  # processes.ping.exec = "ping example.com";
-
-  # See full reference at https://devenv.sh/reference/options/
 }
