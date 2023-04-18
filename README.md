@@ -24,7 +24,7 @@ Requirements:
 
 ### Activate the development environment
 
-```bash
+```sh
 devenv shell
 poetry env use python
 poetry install
@@ -32,7 +32,7 @@ poetry install
 
 ### Testing
 
-```bash
+```sh
 pytest
 ```
 
